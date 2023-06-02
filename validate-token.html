@@ -1,0 +1,39 @@
+<html>
+<header>
+    <style>
+        div {
+            margin: 10px;
+        }
+        div input, div button {
+            width: 100%;
+        }
+        button {
+            margin: 10px auto 10px auto;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById("logoutRedirectUrl").value = window.location.href;
+        }
+    </script>
+</header>
+<body>
+
+<div>
+    <form id="tokenForm" name="tokenForm" method="POST" action="https://hidden-staging.izicap.com/rest/auth/merchant/implicit">
+        <div>
+            <label for="token">Token</label>
+            <input name="token" id="token" type="text" size="500" value="token"/>
+        </div>
+        <div>
+            <label for="logoutRedirectUrl">Url to redirect to after logout or session expiration</label>
+            <input name="logoutRedirectUrl" id="logoutRedirectUrl" type="text" size="500"/>
+        </div>
+        <div>
+            <button id="tokenSubmit" type="submit">Validate token</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
